@@ -6,34 +6,51 @@
     <title>Document</title>
 </head>
 <body>
-   
+    
     <?php 
-    
-    function calcular_bonus($salario) {
-        $bonus = 0;
-        if ($salario < 2000){
-            $bonus = $salario * 0.20;
-        } else if($salario <= 4000){
-            $bonus = $salario * 0.15;
-        } else if($salario <= 7000){
-            $bonus = $salario * 0.10;
+
+    function calcular_preco_final($valor_produto, $categoria) {
+        $valor_final = 0;
+
+        if ($categoria === "alimento") {
+            $valor_final = $valor_produto - ($valor_produto * 0.10);
+
+        } else if ($categoria === "eletronico") {
+            $valor_final = $valor_produto + ($valor_produto * 0.15);
+
+        } else if ($categoria === "vestuario") {
+            $valor_final = $valor_produto - ($valor_produto * 0.05);
+
+        } else if ($categoria === "luxo") {
+            $valor_final = $valor_produto + ($valor_produto * 0.20);
+
         } else {
-            $bonus = $salario * 0.05;
-        } 
+            $valor_final = $valor_produto;
+        }
 
-        return $bonus;
-        
+        return $valor_final;
     }
-    
-    $salario = 10000;
-        $bonus = calcular_bonus($salario);
-        $salario_final = $salario + $bonus;
 
-        echo "O salário original é de: R$" . $salario . " Reais!" . "<br>";
-        echo "O bonus recebido é de: R$" . $bonus . " Reais!" . "<br>";
-        echo "O salário final é de: R$" . $salario_final . " Reais!" . "<br>";
-    
+    $produto = "ss";
+    $valor_produto = 100;
+    $categoria = "eletronico";
+
+    $valor_final = calcular_preco_final($valor_produto, $categoria);
+
+    echo "Produto: " . $produto . "<br>";
+    echo "Categoria: " . $categoria . "<br>";
+    echo "Valor original: R$ " . $valor_produto . "<br>";
+    echo "Valor final: R$ " . $valor_final . "<br>";
+
+    if ($valor_final != $valor_produto) {
+        echo "Houve desconto ou taxa? Sim";
+    } else {
+        echo "Houve desconto ou taxa? Não";
+    }
+
     ?>
+
+
 
 </body>
 </html>

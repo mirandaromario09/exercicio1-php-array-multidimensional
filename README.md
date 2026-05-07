@@ -1,13 +1,14 @@
-# Estudo de PHP - Funções e cálculo de bônus
+# Estudo de PHP - Funções com parâmetros e cálculo de preço por categoria
 
-Exercício pra praticar criação de funções em PHP e estruturas condicionais simulando o cálculo de bônus salarial.
+Exercício pra praticar funções com parâmetros e condicionais simulando cálculo de preço final de produtos com base na categoria.
 
 ## Lógica do exercício
 
-- Salário abaixo de R$ 2.000 → bônus de 20%
-- Salário entre R$ 2.000 e R$ 4.000 → bônus de 15%
-- Salário entre R$ 4.001 e R$ 7.000 → bônus de 10%
-- Salário acima de R$ 7.000 → bônus de 5%
+- **Alimento** → desconto de 10%
+- **Eletrônico** → acréscimo de 15%
+- **Vestuário** → desconto de 5%
+- **Luxo** → acréscimo de 20%
+- **Outras categorias** → mantém o valor original
 
 ## Arquivos
 
