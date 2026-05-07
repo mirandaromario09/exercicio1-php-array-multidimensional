@@ -3,112 +3,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Estudo de Arrays em PHP</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        hr { border: 1px solid #ccc; margin: 20px 0; }
+        pre { background: #f4f4f4; padding: 10px; border-radius: 5px; }
+    </style>
 </head>
 <body>
 
     <?php
 
-    // ==================== 1. FUNÇÕES NATIVAS DO PHP ====================
+    // ======================================================================
+    // 1. O QUE É UM ARRAY?
+    // Array é uma variável que pode guardar MULTIPLOS valores ao mesmo tempo.
+    // ======================================================================
 
-    $texto = "Curso completo de PHP";
+    echo "<h1>Estudo Completo de Arrays em PHP</h1>";
 
-    echo "<h3>1. Funções Nativas (strings)</h3>";
-    echo "Original: " . $texto . "<br>";
-    echo "Minúsculo: " . strtolower($texto) . "<br>";
-    echo "Maiúsculo: " . strtoupper($texto) . "<br>";
-    echo "Primeira letra maiúscula: " . ucfirst($texto) . "<br>";
-    echo "Quantidade de caracteres: " . strlen($texto) . "<br>";
-    echo "Trocar PHP por JavaScript: " . str_replace("PHP", "JavaScript", $texto) . "<br>";
+    // ======================================================================
+    // 2. ARRAY SIMPLES (INDEXADO)
+    // Os indices sao numericos, comecando do 0 automaticamente.
+    // ======================================================================
 
-    echo "<hr>";
-    echo "<h3>Funções Nativas (matemática)</h3>";
-    echo "Valor absoluto de -10: " . abs(-10) . "<br>";
-    echo "Arredondar 4.7: " . round(4.7) . "<br>";
-    echo "Número aleatório entre 1 e 10: " . rand(1, 10) . "<br>";
-    echo "Raiz quadrada de 25: " . sqrt(25) . "<br>";
-    echo "Potência 2³: " . pow(2, 3) . "<br>";
+    echo "<h2>1. Array Simples (Indexado)</h2>";
 
-    echo "<hr>";
+    $frutas = ["Maca", "Banana", "Laranja", "Uva"];
 
-    // ==================== 2. FUNÇÕES DEFINIDAS PELO USUÁRIO ====================
+    echo "Array completo: ";
+    echo '<pre>';
+    print_r($frutas);
+    echo '</pre>';
 
-    echo "<h3>2. Função Definida pelo Usuário</h3>";
+    echo "Acessando cada posicao:<br>";
+    echo "Posicao 0: " . $frutas[0] . "<br>";
+    echo "Posicao 1: " . $frutas[1] . "<br>";
+    echo "Posicao 2: " . $frutas[2] . "<br>";
+    echo "Posicao 3: " . $frutas[3] . "<br>";
 
-    function saudacao($nome) {
-        return "Olá, " . $nome . "! Bem-vindo!";
-    }
-
-    echo saudacao("Ronaldo") . "<br>";
-    echo saudacao("Maria") . "<br>";
+    echo "Quantidade de itens: " . count($frutas) . "<br>";
 
     echo "<hr>";
 
-    // ==================== 3. FUNÇÃO COM PARÂMETRO OPCIONAL ====================
+    // ======================================================================
+    // 3. ARRAY ASSOCIATIVO
+    // Os indices sao nomes (strings) que voce mesmo define.
+    // ======================================================================
 
-    echo "<h3>3. Função com Parâmetro Opcional</h3>";
+    echo "<h2>2. Array Associativo</h2>";
 
-    function desconto($valor, $porcentagem = 10) {
-        return $valor - ($valor * $porcentagem / 100);
-    }
+    $aluno = [
+        "nome" => "Ronaldo",
+        "idade" => 25,
+        "cidade" => "Sao Paulo",
+        "curso" => "PHP"
+    ];
 
-    echo "Desconto padrão (10%) em R$ 200: R$ " . desconto(200) . "<br>";
-    echo "Desconto personalizado (25%) em R$ 200: R$ " . desconto(200, 25) . "<br>";
+    echo "Array completo: ";
+    echo '<pre>';
+    print_r($aluno);
+    echo '</pre>';
 
-    echo "<hr>";
-
-    // ==================== 4. FUNÇÃO COM MÚLTIPLOS PARÂMETROS ====================
-
-    echo "<h3>4. Função com Múltiplos Parâmetros</h3>";
-
-    function calcular_media($n1, $n2, $n3) {
-        return ($n1 + $n2 + $n3) / 3;
-    }
-
-    echo "Média de 7, 8 e 9: " . calcular_media(7, 8, 9) . "<br>";
-
-    echo "<hr>";
-
-    // ==================== 5. FUNÇÃO COM RETORNO BOOLEANO ====================
-
-    echo "<h3>5. Função com Retorno Booleano</h3>";
-
-    function eh_par($numero) {
-        if ($numero % 2 == 0) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    if (eh_par(10)) {
-        echo "10 é par! <br>";
-    } else {
-        echo "10 é ímpar! <br>";
-    }
-
-    if (eh_par(7)) {
-        echo "7 é par! <br>";
-    } else {
-        echo "7 é ímpar! <br>";
-    }
+    echo "Acessando cada chave:<br>";
+    echo "Nome: " . $aluno["nome"] . "<br>";
+    echo "Idade: " . $aluno["idade"] . "<br>";
+    echo "Cidade: " . $aluno["cidade"] . "<br>";
+    echo "Curso: " . $aluno["curso"] . "<br>";
 
     echo "<hr>";
 
-    // ==================== 6. FUNÇÃO CHAMANDO OUTRA FUNÇÃO ====================
+    // ======================================================================
+    // 4. ADICIONAR ITENS EM UM ARRAY
+    // ======================================================================
 
-    echo "<h3>6. Função Chamando Outra Função</h3>";
+    echo "<h2>3. Adicionar Itens</h2>";
 
-    function calcular_dobro($num) {
-        return $num * 2;
-    }
+    $numeros = [1, 2, 3];
+    echo "Array original: ";
+    print_r($numeros);
 
-    function calcular_quadruplo($num) {
-        return calcular_dobro($num) * 2;
-    }
+    $numeros[] = 4;
+    echo "Depois de adicionar o 4: ";
+    print_r($numeros);
 
-    echo "O dobro de 5 é: " . calcular_dobro(5) . "<br>";
-    echo "O quádruplo de 5 é: " . calcular_quadruplo(5) . "<br>";
+    $numeros[] = 5;
+    echo "Depois de adicionar o 5: ";
+    print_r($numeros);
+
+    echo "<hr>";
+
+    // ======================================================================
+    // 5. ADICIONAR ITENS EM ARRAY ASSOCIATIVO
+    // ======================================================================
+
+    echo "<h2>4. Adicionar Itens em Array Associativo</h2>";
+
+    $produto = [
+        "nome" => "Notebook",
+        "preco" => 3500
+    ];
+
+    echo "Array original: ";
+    print_r($produto);
+
+    $produto["marca"] = "Dell";
+    $produto["estoque"] = 15;
+
+    echo "Depois de adicionar marca e estoque: ";
+    print_r($produto);
+
+    echo "<hr>";
+
+    // ======================================================================
+    // 6. MODIFICAR ITENS
+    // ======================================================================
+
+    echo "<h2>5. Modificar Itens</h2>";
+
+    $cores = ["Azul", "Verde", "Vermelho"];
+    echo "Array original: ";
+    print_r($cores);
+
+    $cores[1] = "Amarelo";
+    echo "Depois de trocar indice 1 para Amarelo: ";
+    print_r($cores);
+
+    $associativo = ["a" => 10, "b" => 20];
+    echo "Array original: ";
+    print_r($associativo);
+
+    $associativo["a"] = 99;
+    echo "Depois de trocar a para 99: ";
+    print_r($associativo);
+
+    echo "<hr>";
+
+    // ======================================================================
+    // 7. REMOVER ITENS
+    // ======================================================================
+
+    echo "<h2>6. Remover Itens</h2>";
+
+    $remover = [10, 20, 30, 40, 50];
+    echo "Array original: ";
+    print_r($remover);
+
+    unset($remover[2]);
+    echo "Depois de remover o indice 2 (unset): ";
+    print_r($remover);
+
+    $remover = array_values($remover);
+    echo "Depois de reorganizar indices (array_values): ";
+    print_r($remover);
+
+    echo "<hr>";
+
+
+    // ======================================================================
+    // 9. ARRAY MULTIDIMENSIONAL (array dentro de array)
+    // ======================================================================
+
+    echo "<h2>8. Array Multidimensional</h2>";
+
+    $turma = [
+        ["nome" => "Joao", "nota" => 8.5],
+        ["nome" => "Maria", "nota" => 9.0],
+        ["nome" => "Pedro", "nota" => 7.5]
+    ];
+
+    echo "Estrutura do array: ";
+    print_r($turma);
+
+    echo "<br>Acessando itens:<br>";
+    echo "Nome do primeiro aluno: " . $turma[0]["nome"] . "<br>";
+    echo "Nota do segundo aluno: " . $turma[1]["nota"] . "<br>";
 
     ?>
 

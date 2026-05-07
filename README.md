@@ -1,20 +1,21 @@
-# Estudo de PHP - Tipos de funções
+# Estudo de PHP - Arrays
 
-Exercício pra explorar os diferentes tipos de funções que o PHP oferece, desde as funções nativas da linguagem a funções criadas por mim.
+Estudo completo sobre arrays em PHP, abordando desde arrays simples indexados até arrays multidimensionais.
 
-## Lógica do exercício
+## Lógica do estudo
 
-- **Funções nativas de string** — `strtolower`, `strtoupper`, `ucfirst`, `strlen`, `str_replace`
-- **Funções nativas de matemática** — `abs`, `round`, `rand`, `sqrt`, `pow`
-- **Função definida pelo usuário** — criar própria função com `function`
-- **Função com parâmetro opcional** — parâmetro com valor padrão que pode ser omitido
-- **Função com múltiplos parâmetros** — receber mais de um valor
-- **Função com retorno booleano** — retornar `true` ou `false`
-- **Função chamando outra função** — reutilizar função dentro de outra
+- **Array Simples (Indexado)**: array com índices numéricos automáticos, acesso por posição (`[0]`, `[1]`, etc.) e uso de `count()` para ver quantidade de itens
+- **Array Associativo**: array com chaves definidas pelo programador (strings), acesso pelas chaves (`["nome"]`, `["idade"]`, etc.)
+- **Adicionar Itens**: uso de `$array[] = valor` para adicionar ao final de um array indexado
+- **Adicionar em Associativo**: adicionar novos pares chave => valor em um array associativo
+- **Modificar Itens**: alterar o valor de uma posição existente, tanto em array indexado quanto associativo
+- **Remover Itens**: uso de `unset()` para remover um item e `array_values()` para reorganizar os índices
+- **Array Multidimensional**: array contendo outros arrays, acesso aninhado como `$turma[0]["nome"]`
 
 ## Arquivos
 
-- `index.php` — página principal com os exemplos
+- `index.php` — Código com exemplos práticos de cada conceito de array
 
 ---
+
 [Ver online](https://mirandaromario09.github.io/2-)
