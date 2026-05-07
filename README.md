@@ -1,20 +1,18 @@
-# Estudo de PHP - Arrays
+# Estudo de PHP - Array Multidimensional com Alunos
 
-Estudo completo sobre arrays em PHP, abordando desde arrays simples indexados até arrays multidimensionais.
+Exercício utilizando array multidimensional para armazenar dados de alunos (nome, notas, curso) e exibir média e situação (aprovado/reprovado).
 
-## Lógica do estudo
+## Lógica do exercício
 
-- **Array Simples (Indexado)**: array com índices numéricos automáticos, acesso por posição (`[0]`, `[1]`, etc.) e uso de `count()` para ver quantidade de itens
-- **Array Associativo**: array com chaves definidas pelo programador (strings), acesso pelas chaves (`["nome"]`, `["idade"]`, etc.)
-- **Adicionar Itens**: uso de `$array[] = valor` para adicionar ao final de um array indexado
-- **Adicionar em Associativo**: adicionar novos pares chave => valor em um array associativo
-- **Modificar Itens**: alterar o valor de uma posição existente, tanto em array indexado quanto associativo
-- **Remover Itens**: uso de `unset()` para remover um item e `array_values()` para reorganizar os índices
-- **Array Multidimensional**: array contendo outros arrays, acesso aninhado como `$turma[0]["nome"]`
+- **Array multidimensional**: array `$alunos` contendo 4 alunos, cada um com nome, duas notas e curso
+- **Acesso a dados**: exibição de nome, curso, nota1 e nota2 de cada aluno usando índices (`$alunos[0]["nome"]`)
+- **Cálculo de média**: soma das duas notas dividido por 2 para cada aluno
+- **Condicional**: estrutura `if/else` para verificar se a média é >= 7 (Aprovado) ou < 7 (Reprovado)
+- **Formatação visual**: uso de `<hr>` para separar cada aluno na tela
 
 ## Arquivos
 
-- `index.php` — Código com exemplos práticos de cada conceito de array
+- `index.php` — Código com o array de alunos, exibição dos dados, cálculo de média e situação
 
 ---
 
