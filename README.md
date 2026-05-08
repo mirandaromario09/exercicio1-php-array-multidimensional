@@ -16,4 +16,4 @@ Exercício utilizando array multidimensional para armazenar dados de alunos (nom
 
 ---
 
-[Ver online](https://mirandaromario09.github.io/2-)
+[Ver online](https://mirandaromario09.github.io/exercicio1-php-array-multidimensional)
